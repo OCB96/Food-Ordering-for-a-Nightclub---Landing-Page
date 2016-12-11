@@ -1,0 +1,45 @@
+body {
+  text-align: center;
+  background-color: rgb(210, 248, 255);
+}
+
+h1 {
+  background-color: rgb(242, 159, 48);
+  text-align: center;
+  margin: 15px;
+  border-color: rgb(0, 0, 0);
+  border-style: ridge;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+#fooditem {
+  display: flex;
+  background-color: rgb(66, 162, 218);
+  text-align: left;
+  align-items: center;
+  margin: 15px;
+  border-color: rgb(0, 0, 0);
+  border-style: ridge;
+  border-radius: 15px;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+#beverage {
+  display: flex;
+  background-color: rgb(191, 72, 151);
+  text-align: left;
+  align-items: center;
+  margin: 15px;
+  border-color: rgb(0, 0, 0);
+  border-style: ridge;
+  border-radius: 15px;
+  padding: 15px;
+  justify-content: space-between;;
+}
+
+button {
+  margin: 15px;
+  padding: 5px;
+}
