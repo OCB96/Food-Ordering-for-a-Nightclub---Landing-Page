@@ -14,7 +14,7 @@
       <h2>Food</h2>
       <h4>
         <div id= "fooditem" v-for="fooditem in fooditems">
-          {{fooditem.text}}<br>{{fooditem.price}}<br>{{fooditem.description}}
+          {{fooditem.text}}<br>Rs. {{fooditem.price}}<br>{{fooditem.description}}
           <button type="button" @click="addFooditemToMenu()">Add to Order Menu</button>
         </div>
       </h4>
@@ -22,7 +22,7 @@
       <h2>Beverages</h2>
       <h4>
         <div id= "beverage" v-for="beverage in beverages">
-          {{beverage.text}}<br>{{beverage.price}}<br>{{beverage.description}}
+          {{beverage.text}}<br>Rs. {{beverage.price}}<br>{{beverage.description}}
           <button type="button" @click="addBeverageToMenu()">Add to Order Menu</button>
         </div>
       </h4>
@@ -30,12 +30,20 @@
       <h1>
         Your current orders:
       </h1>
-      <div id= "ordermenu" v-for="orderitem in orderMenu" v-if="orderStatus==true" >
-        {{orderitem.text}}
+      <div v-for="food in foodname" v-if="orderStatus==true" >
+        {{food.text}}
       </div>
+      <div v-for="beverage in beveragename" v-if="orderStatus==1" >
+        {{beverage.text}}
+      </div>
+
+      <button type="button" @click="calculateBill()">Calculate your Bill.</button>
+      <p v-if="bill!=0">
+        Your final bill is: {{bill}}
+      </p>
     </div>
 
-    <button type="button" @click="calculateBill(v-for="orderitem in orderMenu")">Calculate your Bill.</button>
+
 
     <script src="script.js"></script>
 

@@ -1,66 +1,70 @@
 new Vue ({
   el: '#app',
   data: {
-    orderMenu: [],
-    orderStatus: false,
+    bill: 0,
+    foodbill: 0,
+    beveragebill: 0,
+    foodname: [],
+    beveragename: [],
+    orderStatus: 0,
     fooditems: [
       {
         text: "Butter Chicken",
-        price: "Rs. 250",
+        price: 250,
         description: "Boneless chicken chunks cooked in tomato, onions, spices and butter"
       },
       {
         text: "Chicken Biryani",
-        price: "Rs. 130",
+        price: 130,
         description: "Boneless chicken chunks with buttered yellow rice"
       },
       {
         text: "Veg Burger",
-        price: "Rs. 80",
+        price: 80,
         description: "Veg Burger"
       },
       {
         text: "Barbeque Chicken Pizza",
-        price: "Rs. 180",
+        price: 180,
         description: "It's a pizza, with chicken, and barbeque sauce!"
       }
     ],
     beverages: [
       {
         text: "Lemon Iced Tea",
-        price: "Rs. 80",
+        price: 80,
         description: "Lemon flavored Iced Tea, the Georgia kind"
       },
       {
         text: "Cinnamon Frappe",
-        price: "Rs. 130",
+        price: 130,
         description: "Blended iced coffee, with cinnamon sprinkles"
       },
       {
         text: "Wine",
-        price: "Rs. 600",
+        price: 600,
         description: "The one from Goa"
       },
       {
         text: "Alcohol",
-        price: "Rs. 300",
+        price: 300,
         description: "Whiskey, Rum, Vodka, Gin? Order any."
       }
     ]
   },
   methods: {
     addFooditemToMenu: function() {
-      this.orderMenu.text.push(this.fooditem.text);
-      this.orderMenu.price.push(this.fooditem.price);
-      this.orderStatus=true;
+      this.foodname.push(this.text);
+      this.foodbill+=this.price;
+      this.orderStatus=1;
     },
     addBeverageToMenu: function() {
-      this.orderMenu.text.push(this.beverage.text);
-      this.orderMenu.price.push(this.beverage.price);
-      this.orderStatus=true;
+      this.beveragename.push(this.text);
+      this.beveragebill+=this.price;
+      this.orderStatus=1;
     },
     calculateBill: function() {
-
+      this.bill=this.foodbill+this.beveragebill;
     }
   }
 })
