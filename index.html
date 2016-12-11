@@ -14,7 +14,7 @@
       <h2>Food</h2>
       <h4>
         <div id= "fooditem" v-for="fooditem in fooditems">
-          {{fooditem.text}}<br>Rs. {{fooditem.price}}<br>{{fooditem.description}}
+          {{fooditem.text}}<br><i>Rs. {{fooditem.price}}<br>{{fooditem.description}}</i>
           <button type="button" @click="addFooditemToMenu()">Add to Order Menu</button>
         </div>
       </h4>
@@ -22,7 +22,7 @@
       <h2>Beverages</h2>
       <h4>
         <div id= "beverage" v-for="beverage in beverages">
-          {{beverage.text}}<br>Rs. {{beverage.price}}<br>{{beverage.description}}
+          {{beverage.text}}<br><i>Rs. {{beverage.price}}<br>{{beverage.description}}</i>
           <button type="button" @click="addBeverageToMenu()">Add to Order Menu</button>
         </div>
       </h4>
