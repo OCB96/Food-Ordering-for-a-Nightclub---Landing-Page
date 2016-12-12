@@ -2,9 +2,6 @@ new Vue ({
   el: '#app',
   data: {
     bill: 0,
-    length: 0,
-    // foodbill: 0,
-    // beveragebill: 0,
     foodname: [],
     beveragename: [],
     price: [],
@@ -58,29 +55,20 @@ new Vue ({
     addFooditemToMenu: function(fooditem) {
       this.foodname.push(fooditem.text);
       this.price.push(fooditem.price),
-      this.length+=1;
-      // this.foodbill+=fooditem.price;
       this.orderStatus=true;
     },
     addBeverageToMenu: function(beverage) {
       this.beveragename.push(beverage.text);
       this.price.push(beverage.price);
-      this.length+=1;
-      // this.beveragebill+=beverage.price;
       this.orderStatus=true;
     },
     calculateBill: function() {
       this.bill=0;
-      for(i=0;i<this.length;i++)
+      for(i=0;i<this.price.length;i++)
       {
-        this.bill+=parseInt(this.price);
+        this.bill+=parseInt(this.price[i]);
       }
-      console.log(this.bill);
-      console.log(this.price);
-      // this.bill=this.foodbill+this.beveragebill;
-      //console.log(this.foodbill);
-      //console.log(this.beveragebill);
-      //console.log(this.bill);
+
     },
     removefood: function (index) {
       this.foodname.splice(index,1);

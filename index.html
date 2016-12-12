@@ -33,20 +33,26 @@
         <h1 id="post">
           Your current orders:
         </h1>
+        <div id="price"> <a v-for="item in price">{{item}} + </a></div>
+        <div id="bill">
+        <button align="center" type="button" @click="calculateBill()">Calculate your Bill.</button><br>
+
+        <div id="final" v-if="bill!=0">
+          Your final bill is: {{bill}}
+        </div>
+      </div><br>
         <ul>
-          <li v-for="food in foodname" v-if="orderStatus==true" >
+          <li v-for="food in foodname" v-for "item in prices" v-if="orderStatus==true" >
           {{food}}
+          {{item}}
           <button type="button" @click="removefood($index)">Remove Item</button>
         </li>
-        <li v-for="beverage in beveragename" v-if="orderStatus==true" >
+        <li v-for="beverage in beveragename" v-for "item in prices" v-if="orderStatus==true" >
           {{beverage}}
+          {{item}}
           <button type="button" @click="removebeverage($index)">Remove Item</button>
         </li>
       </ul>
-      <button align="center" type="button" @click="calculateBill()">Calculate your Bill.</button>
-      <div id="final" v-if="bill!=0">
-        Your final bill is: {{bill}}
-      </div>
 
       </div>
 
