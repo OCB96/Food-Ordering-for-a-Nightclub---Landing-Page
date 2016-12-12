@@ -1,4 +1,4 @@
-# SWENGG-Final-Eval
+# Food Ordering for a Nightclub - Landing Page
 final evaluation for software engineering
 ## Synopsis
 
