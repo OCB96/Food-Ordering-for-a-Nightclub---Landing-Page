@@ -70,7 +70,8 @@ new Vue ({
       this.orderStatus=true;
     },
     calculateBill: function() {
-      for(i=0;i<this.length-1;i++)
+      this.bill=0;
+      for(i=0;i<this.length;i++)
       {
         this.bill+=parseInt(this.price);
       }
