@@ -1,14 +1,24 @@
 body {
   text-align: center;
-  background-color: rgb(210, 248, 255);
+  background-color: rgba(237, 255, 252, 0.86);
 }
 
 h1 {
-  background-color: rgb(242, 159, 48);
+  background-color: rgb(245, 164, 164);
   text-align: center;
   margin: 15px;
   border-color: rgb(0, 0, 0);
   border-style: ridge;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+h1#post {
+  background-color: rgb(242, 159, 48);
+  text-align: center;
+  margin: 15px;
+  border-color: rgb(0, 0, 0);
+  border-style: hidden;
   padding: 10px;
   justify-content: space-between;
 }
@@ -20,7 +30,7 @@ h1 {
   align-items: center;
   margin: 15px;
   border-color: rgb(0, 0, 0);
-  border-style: ridge;
+  border-style: hidden;
   border-radius: 15px;
   padding: 15px;
   justify-content: space-between;
@@ -28,12 +38,12 @@ h1 {
 
 #beverage {
   display: flex;
-  background-color: rgb(191, 72, 151);
+  background-color: rgb(181, 232, 204);
   text-align: left;
   align-items: center;
   margin: 15px;
   border-color: rgb(0, 0, 0);
-  border-style: ridge;
+  border-style: hidden;
   border-radius: 15px;
   padding: 15px;
   justify-content: space-between;;
@@ -42,4 +52,37 @@ h1 {
 button {
   margin: 15px;
   padding: 5px;
+}
+
+#info {
+  display: flex;
+  float: left;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  align-self: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  align-self: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+div#final {
+  background-color:rgb(166, 33, 33);
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  border-color: rgb(231, 166, 166);
+  border-style: hidden;
 }

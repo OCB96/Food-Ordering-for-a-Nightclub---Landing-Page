@@ -5,42 +5,52 @@
     <title>Nightclub Pre-booking</title>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
+
+
   <body>
 
-    <script src="vue.js"></script>
     <h1>Ordering Menu</h1>
+    <script src="vue.js"></script>
 
     <div id="app">
       <h2>Food</h2>
       <h4>
         <div id= "fooditem" v-for="fooditem in fooditems">
-          {{fooditem.text}}<br><i>Rs. {{fooditem.price}}<br>{{fooditem.description}}</i>
-          <button type="button" @click="addFooditemToMenu()">Add to Order Menu</button>
+          {{fooditem.text}}<i><div id="info">Rs. {{fooditem.price}}<br>{{fooditem.description}}</i></div>
+          <button type="button" @click="addFooditemToMenu(fooditem)">Add to Order Menu</button>
         </div>
       </h4>
 
       <h2>Beverages</h2>
       <h4>
         <div id= "beverage" v-for="beverage in beverages">
-          {{beverage.text}}<br><i>Rs. {{beverage.price}}<br>{{beverage.description}}</i>
-          <button type="button" @click="addBeverageToMenu()">Add to Order Menu</button>
+          {{beverage.text}}<div id="info"><i>Rs. {{beverage.price}}<br>{{beverage.description}}</i></div>
+          <button type="button" @click="addBeverageToMenu(beverage)">Add to Order Menu</button>
         </div>
       </h4>
-
-      <h1>
-        Your current orders:
-      </h1>
-      <div v-for="food in foodname" v-if="orderStatus==true" >
-        {{food.text}}
-      </div>
-      <div v-for="beverage in beveragename" v-if="orderStatus==1" >
-        {{beverage.text}}
-      </div>
-
-      <button type="button" @click="calculateBill()">Calculate your Bill.</button>
-      <p v-if="bill!=0">
+      <br><br><br>
+      <div id="order">
+        <h1 id="post">
+          Your current orders:
+        </h1>
+        <ul>
+          <li v-for="food in foodname" v-if="orderStatus==true" >
+          {{food}}
+          <button type="button" @click="removefood($index)">Remove Item</button>
+        </li>
+        <li v-for="beverage in beveragename" v-if="orderStatus==true" >
+          {{beverage}}
+          <button type="button" @click="removebeverage($index)">Remove Item</button>
+        </li>
+      </ul>
+      <button align="center" type="button" @click="calculateBill()">Calculate your Bill.</button>
+      <div id="final" v-if="bill!=0">
         Your final bill is: {{bill}}
-      </p>
+      </div>
+
+      </div>
+
+
     </div>
 
 

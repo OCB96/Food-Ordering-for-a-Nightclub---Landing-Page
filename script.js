@@ -2,16 +2,18 @@ new Vue ({
   el: '#app',
   data: {
     bill: 0,
-    foodbill: 0,
-    beveragebill: 0,
+    length: 0,
+    // foodbill: 0,
+    // beveragebill: 0,
     foodname: [],
     beveragename: [],
-    orderStatus: 0,
+    price: [],
+    orderStatus: false,
     fooditems: [
       {
         text: "Butter Chicken",
         price: 250,
-        description: "Boneless chicken chunks cooked in tomato, onions, spices and butter"
+        description: "Boneless chicken chunks cooked in spices and butter"
       },
       {
         text: "Chicken Biryani",
@@ -21,10 +23,10 @@ new Vue ({
       {
         text: "Veg Burger",
         price: 80,
-        description: "Veg Burger"
+        description: "Burger, with aloo patty, and loaded with veggies"
       },
       {
-        text: "Barbeque Chicken Pizza",
+        text: "BBQ Chicken Pizza",
         price: 180,
         description: "It's a pizza, with chicken, and barbeque sauce!"
       }
@@ -53,18 +55,39 @@ new Vue ({
     ]
   },
   methods: {
-    addFooditemToMenu: function() {
-      this.foodname.push(this.text);
-      this.foodbill+=this.price;
-      this.orderStatus=1;
+    addFooditemToMenu: function(fooditem) {
+      this.foodname.push(fooditem.text);
+      this.price.push(fooditem.price),
+      this.length+=1;
+      // this.foodbill+=fooditem.price;
+      this.orderStatus=true;
     },
-    addBeverageToMenu: function() {
-      this.beveragename.push(this.text);
-      this.beveragebill+=this.price;
-      this.orderStatus=1;
+    addBeverageToMenu: function(beverage) {
+      this.beveragename.push(beverage.text);
+      this.price.push(beverage.price);
+      this.length+=1;
+      // this.beveragebill+=beverage.price;
+      this.orderStatus=true;
     },
     calculateBill: function() {
-      this.bill=this.foodbill+this.beveragebill;
+      for(i=0;i<this.length-1;i++)
+      {
+        this.bill+=parseInt(this.price);
+      }
+      console.log(this.bill);
+      console.log(this.price);
+      // this.bill=this.foodbill+this.beveragebill;
+      //console.log(this.foodbill);
+      //console.log(this.beveragebill);
+      //console.log(this.bill);
+    },
+    removefood: function (index) {
+      this.foodname.splice(index,1);
+      this.price.splice(index,1);
+    },
+    removebeverage: function(index) {
+      this.beveragename.splice(index,1);
+      this.price.splice(index,1);
     }
   }
 })
